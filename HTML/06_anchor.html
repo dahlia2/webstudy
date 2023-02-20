@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Anchor 태그
+        1. 인라인 레벨
+        2. 링크를 만드는 태그이다
+        3. <a></a>
+        4. 주요 속성
+            1) href   : 이동할 경로를 작성
+            2) title  : 풍선 도움말(마우스를 가져다대면 나타나는 메시지 창)
+            3) target : 어떤 창으로 이동하는지 지정
+                (1) _self  : 현재 창으로 이동
+                (2) _blank : 새 창으로 이동
+    -->
+
+    <!-- 1. 이동이 없는 링크 -->
+    <p>
+        <a href = "#">비어 있는 링크</a>
+        <br>
+        <a href="javascript:void(0)">비어 있는 링크</a>
+    </p>
+
+    <!-- 2. 웹 경로 링크 -->
+    <p>
+        <a href="https://www.google.com" targer="_self">구글</a>
+        <br>
+        <a href="https://www.naver.com" target="_blank">네이버</a>
+    </p>
+
+    <!-- 3. 이미지 링크 -->
+    <p>
+        <a href="https://www.naver.com">
+            <img src="../../images/logo_naver.png" width="200px">
+        </a>
+    </p>
+
+    <!-- 4. 다른 파일 링크 -->
+    <ul>
+        <li><a href="01_overview.html" targer="_blank">오버뷰</a></li>
+        <li><a href="02_basic.html">기본</a></li>
+        <li><a href="03_list.html">목록</a></li>
+    </ul>
+
+    <!-- 5. 문서 내부 링크 -->
+    <!-- id 속성 : HTML 구성 요소를 식별하기 위한 속성으로 중복된 값이 없어야 한다. -->
+    <ul>
+        <li><a href="#title">id="title"인 요소로 이동하기</a></li>
+        <li><a href="#image">id="image"인 요소로 이동하기</a></li>
+        <li><a href="#content">id="content"인 요소로 이동하기</a></li>
+    </ul>
+
+    <h1 id="title">겨울</h1>
+    <p><img src="../../images/nature5.jpg" width="500"></p>
+    <p id="content">
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+        12월부터 2월까지는 겨울입니다.<br>
+
+    </p>
+
+    <!-- 6. 이미지 맵 활용하기 -->
+    <!--
+        이미지 맵
+        1. 이미지의 일부 영역에 링크를 생성할 수 있다.
+        2. <img> 태그와 <map> 태그로 작성한다.
+        3. 사용 방법
+            1) 태그 사용법
+            <img src="이미지경로" usemap="#맵이름">
+            <map name="맵이름">
+                <area shape="모양" coord="좌표작성" href="링크경로">
+            </map>
+            2) shape에 따른 coord 작성법
+                (1) shape="rect"   coord="시작x, 시작y, 종료x, 종료y"
+                (2) shape="circle" coord="중심x, 중심y, 반지름(대충 반지름 제곱이 x의 값)"
+     -->
+     <p>
+        <img src="../../images/domino.jpg" usemap="#domino_map">
+        <map name="domino_map"> 
+            <area href="https://www.dominos.co.kr" shape="rect" coords="300, 2000, 900, 2170">
+            <area href="https://www.dominos.co.kr" shape="circle" coords="810, 650, 80"> 
+        </map>
+     </p>
+
+</body>
+</html>
+
+
