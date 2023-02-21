@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <!-- 
@@ -46,41 +48,41 @@
             </tr>
         </tfoot>
     </table>
-    
-    <hr> 
 
-<table>
-<tbody>
-    <tr>
-        <td>
-            <img src="../../images/fruit1.jpg" width="200">
-        </td>
-        <td>
-            <img src="../../images/fruit2.jpg" width="200">
-        </td>
-        <td>
-            <img src="../../images/fruit3.jpg" width="200">
-        </td>
-    </tr>
-    <tr>
-        <td>
-            10,000원<br>
-            <strong>베리</strong>
-        </td>
-        <td>
-            20,000원
-            <br>
-            <strong>아보카도</strong>
-        </td>
-        <td>
-            30,000원
-            <br>
-            <strong>바나나</strong>
-        </td>
-    </tr>
-</tbody>
-</head>
-</table>
+    <hr>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <img src="../../images/fruit1.jpg" width="200">
+                </td>
+                <td>
+                    <img src="../../images/fruit2.jpg" width="200">
+                </td>
+                <td>
+                    <img src="../../images/fruit3.jpg" width="200">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    10,000원<br>
+                    <strong>베리</strong>
+                </td>
+                <td>
+                    20,000원
+                    <br>
+                    <strong>아보카도</strong>
+                </td>
+                <td>
+                    30,000원
+                    <br>
+                    <strong>바나나</strong>
+                </td>
+            </tr>
+        </tbody>
+        </head>
+    </table>
 
     <!-- 
         셀 병합
@@ -108,8 +110,8 @@
         </tbody>
     </table>
 
-    <hr>
-
+   <br>
+   
     <!-- 행 병합 -->
     <table border="1">
         <tbody>
@@ -128,8 +130,9 @@
         </tbody>
     </table>
 
+    <hr>
 
-
+    <!-- 연습 1 -->
     <table border="1">
         <tbody>
         </tbody>
@@ -166,7 +169,10 @@
         </tr>
         </tbody>
     </table>
+    
+    <br>
 
+    <!-- 연습 2 -->
     <table border="1">
         <tr>
             <td colspan="4">1</td>
@@ -195,6 +201,43 @@
         </tr>
     </table>
 
+    <br>
+
+    <!-- 연습 3 -->
+    <table border="1">
+        <thead>
+            <tr>
+                <td><strong>이름</strong></td>
+                <td><strong>나이</strong></td>
+                <td><strong>주소</strong></td>
+            </tr>
+            <tbody>
+                <tr>
+                    <td>홍길동</td>
+                    <td>20세</td>
+                    <td>서울시 마포구 노고산동</td>
+                </tr>
+
+                <tr>
+                    <td><strong>특기</strong></td>
+                    <td colspan="2">먹기</td>
+                </tr>
+
+                <tr>
+                    <td rowspan="2">신체</td>
+                    <td colspan="2">180.0cm</td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">83kg</td>
+                </tr>
+            </tbody>
+        </thead>
+    </table>
+
+    <br>
+
+    <!-- 연습 4 -->
     <table border="1">
         <caption>우리펜션 객실안내</caption>
         <thead>
@@ -213,9 +256,11 @@
                 <td rowspan="4">100,000원</td>
             </tr>
             <tr>
-                <td>아레나도</td>
-                <td>여성전용</td>
+                <td rowspan="2">아레나도</td>
                 <td>가족용</td>
+            </tr>
+            <tr>
+                <td>커플용</td>
             </tr>
             <tr>
                 <td>엘레나</td>
@@ -225,11 +270,11 @@
         </tbody>
         <tfoot>
             <tr>
-                <td><strong>6월 15일까지 전 객실 50% 할인</strong></td>
+                <th colspan="4">6월 15일까지 전 객실 50% 할인</th>
             </tr>
         </tfoot>
     </table>
 
 </body>
-</html>
 
+</html>
