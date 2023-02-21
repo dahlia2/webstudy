@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- 1. <input trpe="text"> 태그 -->
+    <p>
+        <!-- 디폴트로 type="text" 적용 -->
+        <input>
+        <br>
+        <!-- 입력 상자 크기는 5, 입력 가능한 최대 글자수는 4글자 -->
+        <input type="text" size="5" maxlength="4">
+        <br>
+        <!-- placeholder 속성 : 입력 메세지 -->
+        <input type="text" placeholder="검색어를 입력하세요">
+        <br>
+        <!-- required 속성 : 필수 입력-->
+        <input type="text" required>
+        <br>
+        <!-- value 속성 : 입력한 값이 저장되는 속성 -->
+        <input type="text" value="날씨">
+        <br>
+        <!-- readonly 속성 : 입력된 값을 수정할 수 없게 만듬 -->
+        <input type="text" value= "영희야 사랑해" readonly="readonly">
+        <br>
+        <!-- disable 속성 : 입력 상자를 사용할 수 없도록 만듬 -->
+        <input type="text" disabled="disabled">
+    </p>
+
+    <!-- 2. 기타 <input> 태그 -->
+    <p>
+        <!-- type="password" : 비밀번호 입력용 -->
+        <input type="password" placeholder="비밀번호">
+        <br>
+        <!-- type="number" : 숫자 입력용 -->
+        <input type="number" min= "1" max="12">
+        <br>
+        <!-- type="email" : 이메일 입력용  (@ 안 쓰면 오류라고 인식)  --> 
+        <input type="email" placeholder="이메일">
+        <br>
+    </p>
+
+    <!-- 3. <textarea> 태그 -->
+    <p>
+        <!-- 디폴트 : 2행 20열 -->
+        <textarea></textarea>
+        <br>
+        <!-- rows 속성 : 행, cols 속성 : 열 -->
+        <textarea rows="3" cols="30"></textarea>
+        <br>
+        <!-- value 속성 대신 태그 내부 텍스트가 입력된 값을 저장한다. -->
+        <textarea>안녕하세요</textarea>
+    </p>
+
+    <!-- 4. 단일 선택 : <input type="radio"> -->
+    <p>
+        <!-- name 속성 : 같은 name을 가지는 radio가 하나처럼 동작한다. -->
+        <!-- 여기서 gender는 변수 이름과 같다 (지정할 수 있다) -->
+        <input type="radio" name="gender">남
+        <input type="radio" name="gender">여
+        <br>
+        <!-- value 속성 : 어떤 radio를 선택했는지 알기 위해서 반드시 추가해야 한다. -->
+        <input type="radio" name="gender" value="male">남
+        <!-- 자바로 치면 String gencer = "male" -->
+        <input type="radio" name="gender" value="female">여
+    </p>
+
+    <!-- 5. 다중 선택 : <input type="checkbox"> -->
+    <p>
+        <!-- 단독 사용이 가능하다. -->
+        <input type="checkbox"> 모두 동의합니다
+        <br>
+        <!-- name 속성 : 같은 이름을 가진 checkbox들은 하나의 배열처럼 동작한다. -->
+        <input type="checkbox" name="hobbies">운동
+        <input type="checkbox" name="hobbies">여행
+        <br>
+        <!-- value 속성 : 어떤 checkbox를 선택했는지 알기 위해서 반드시 추가해야 한다. -->
+        <input type="checkbox" name="hobbies" value="1">운동
+        <input type="checkbox" name="hobbies" value="2">여행
+        <input type="checkbox" name="hobbies" value="4">독서
+        <input type="checkbox" name="hobbies" value="8">영화
+        <!-- 자바에서 String[] hobbies = {"1", "8"} -->
+    </p>
+
+</body>
+</html>

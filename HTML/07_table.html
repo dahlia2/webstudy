@@ -14,7 +14,7 @@
         2. 테이블의 구역을 구분하는 <thead>, <tbody>, <tfoot> 태그가 있다.
             1) 구역을 구분하는 태그는 모두 생략할 수 있다.
             2) <tbody> 태그는 생략하더라도 사용된다.
-            3) 항상 <thead>, <tbody>, <tfoot> 순서가 유지된다.    tbody는 웬만하면 생략하지 않기!
+            3) 항상 <thead>, <tbody>, <tfoot> 순서가 유지된다.   -- (tbody는 웬만하면 생략하지 않기!)
         3. 행(Row)을 만드는 <tr> 태그가 있고, 데이터를 입력할 열을 만드는 <td> 태그가 있다.
     -->
 
@@ -47,5 +47,189 @@
         </tfoot>
     </table>
     
+    <hr> 
+
+<table>
+<tbody>
+    <tr>
+        <td>
+            <img src="../../images/fruit1.jpg" width="200">
+        </td>
+        <td>
+            <img src="../../images/fruit2.jpg" width="200">
+        </td>
+        <td>
+            <img src="../../images/fruit3.jpg" width="200">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            10,000원<br>
+            <strong>베리</strong>
+        </td>
+        <td>
+            20,000원
+            <br>
+            <strong>아보카도</strong>
+        </td>
+        <td>
+            30,000원
+            <br>
+            <strong>바나나</strong>
+        </td>
+    </tr>
+</tbody>
+</head>
+</table>
+
+    <!-- 
+        셀 병합
+        1. <td> 태그의 속성으로 병합한다.
+        2. 병합 속성
+            1) colspan : 열 병합, 좌우 셀을 하나로 병합
+            2) rowspan : 행 병합, 상하 셀을 하나로 병합
+    -->
+
+    <!-- 열 병합 -->
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>1열</td>
+                <td>2열</td>
+                <td>3열</td>
+            </tr>
+            <tr>
+                <td>1열</td>
+                <td colspan="2">2~3열</td>
+            </tr>
+            <tr>
+                <td colspan="3">1~3열</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <!-- 행 병합 -->
+    <table border="1">
+        <tbody>
+            <tr>
+                <td>1행</td>
+                <td rowspan="2">1~2행</td>
+                <td rowspan="3">1~3행</td>
+            </tr>
+            <tr>
+                <td>2행</td>
+            </tr>
+            <tr>
+                <td>3행</td>
+                <td>3행</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <table border="1">
+        <tbody>
+        </tbody>
+        <tr>
+            <td rowspan="5">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td rowspan="3">10</td>
+            <td>11</td>
+            <td>12</td>
+            <td rowspan="2">13</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td colspan="5">19</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table border="1">
+        <tr>
+            <td colspan="4">1</td>
+            <td rowspan="7">2</td>
+        </tr>
+        <tr>
+            <td rowspan="6">3</td>
+            <td rowspan="4">4</td>
+            <td colspan="2">5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td rowspan="4">7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td colspan="2">10</td>
+        </tr>
+        <tr>
+            <td colspan="3">11</td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <caption>우리펜션 객실안내</caption>
+        <thead>
+            <tr>
+                <td><strong>방이름</strong></td>
+                <td><strong>고객구분</strong></td>
+                <td><strong>정원</strong></td>
+                <td><strong>가격</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>콜로라도</td>
+                <td>여성전용</td>
+                <td rowspan="3">4인실</td>
+                <td rowspan="4">100,000원</td>
+            </tr>
+            <tr>
+                <td>아레나도</td>
+                <td>여성전용</td>
+                <td>가족용</td>
+            </tr>
+            <tr>
+                <td>엘레나</td>
+                <td>커플전용</td>
+                <td>2인실</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><strong>6월 15일까지 전 객실 50% 할인</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
 </body>
 </html>
+
