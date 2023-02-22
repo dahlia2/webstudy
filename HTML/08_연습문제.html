@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>연습1</h1>
+        <form method="post">
+            <input type="text" name="id" placeholder="example@naver.com">
+            <input type="password" name="pw" placeholder="비밀번호">
+            <button>로그인</button>
+        </form>
+
+    <h1>연습2</h1>
+        <form method="post">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="id" placeholder="아이디"></td>
+                        <td rowspan="2"><button>로그인</button></td>
+                    </tr>
+                    <tr>
+                       <td><input type="password" name="pw" placeholder="비밀번호"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+        <h1>연습3</h1>
+        <form method="post">
+            <table>
+                <thead>
+                        <tr>
+                            <th colspan="2">개인 정보 작성</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><label for="name">이름</label></td>
+                            <td><input type="text" name="name" id="name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">메일 주소</label></td>
+                            <td><input type="text" name="email" id="email"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="tel">연락처</label></td>
+                            <td><input type="text" name="name" id="name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="url">블로그/홈페이지</label></td>
+                            <td><input type="text" name="url" id="url"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2">
+                                <button>제출하기</button>
+                                <input type="reset" value="다시작성">
+                            </th>
+                        </tr>
+                    </tfoot>
+            </table>
+        </form>
+
+    <h1>연습4</h1>
+        <form method="post">
+            <p>
+                <a href="https://www.naver.com">
+                    <img alt="네이버로고" src="../../images/logo_naver.png" width="150px">
+                </a>
+            </p>
+                <label for="user_id"><strong>아이디</strong></label>
+                <br>
+                <input type="text" name="id" id="user_id">@naver.com
+                <br><br>
+                <label for="user_pw"><strong>비밀번호</strong></label>
+                <br>
+                <input type="password" name="pw" id="user_pw">
+                <br><br>
+                <label for="user_pw2"><strong>비밀번호 재확인</strong></label>
+                <br>
+                <input type="text" id="user_pw2"> <!-- 서버로 보낼 필요가 없어서 name 속성이 없음-->
+                
+                <br><br>
+                
+                <label for="yyyy"><strong>생년월일</strong></label>
+                <br>
+                <input type="text" name="year" id="yyyy" placeholder="년(4자)" maxlength="4" size="4">
+                <select name="month">
+                    <option value="">월</option>
+                    <option value="1">1월</option>
+                    <option value="2">2월</option>
+                    <option value="3">3월</option>
+                    <option value="4">4월</option>
+                    <option value="5">5월</option>
+                    <option value="6">6월</option>
+                    <option value="7">7월</option>
+                    <option value="8">8월</option>
+                    <option value="9">9월</option>
+                    <option value="10">10월</option>
+                    <option value="11">11월</option>
+                    <option value="12">12월</option>
+                </select>
+                <input type="text" name="day" placeholder="일" size="2" maxlength="4">
+                <br><br>
+                <label for="user_gender"><strong>성별</strong></label>
+                <br>
+                <select name="gender", id="user_gender">
+                    <option value="">성별</option>
+                    <option value="male">남자</option>
+                    <option value="female">여자</option>
+                    <option value="none">선택 안함</option>
+                </select>
+
+                <br><br>
+
+                <label for="user_email"><strong>본인 확인 이메일</strong>(선택)</label>
+                <br>
+                <input type="text" name="email" id="user_email" placeholder="선택입력">
+                <br><br>
+                <label for="user_tel"><strong>휴대전화</strong></label>
+                <br>
+                <select name="country">
+                    <option value="+233">가나 +233</option>
+                    <option value="+81">일본 +81</option>
+                    <option value="82" selected>대한민국 +82</option> <!-- selected 기본적으로 보여지는 옵션으로 선택 -->
+                    <option value="...">...</option>
+                    <option value="+832">홍콩 +832</option>
+                </select>
+                <br>
+                <input type="text" name="tel" id="user_tel" placeholder="전화번호 입력" size="10">
+                <input type="button" value="인증번호 받기">
+                <br>
+                <input type="text" placeholder="인증번호 입력하세요" disabled>
+                <br><br>
+                <button>가입하기</button>
+        </form>
+</body>
+</html>
