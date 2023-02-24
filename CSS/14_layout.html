@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /* 
+            float 속성
+                1. HTML 요소들의 기본 배치(상->하, 좌->우)를 벗어날 때 사용한다.
+                2. 왼쪽이나 오른쪽 영역에 배치 시킬 수 있다.
+        */
+        .wrap1 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+        .wrap1 > .box1 {
+            float: left;
+        }
+        .wrap1 > .box2 {
+            float: right;
+        }
+    </style>
+    <div class="wrap1">
+        <div class="box1">BOX1</div>
+        <div class="box2">BOX2</div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam metus lorem, lobortis at sapien vitae, dignissim finibus enim. Maecenas aliquam nulla id lectus mollis elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc sagittis sem ligula, ut congue leo gravida in. Donec augue ex, tempor eu nisi sit amet, tincidunt blandit nulla. Fusce erat magna, eleifend id tincidunt in, pellentesque ac orci. Nullam a est nisl. Etiam odio augue, posuere eu lectus quis, feugiat porttitor ligula. Nam mollis dolor eget eleifend convallis. Cras aliquet, ante eget venenatis congue, neque justo lacinia dui, non blandit augue dui ac leo. Duis quis dapibus risus. Donec nec orci ut libero cursus tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    </div>
+
+    <style>
+        /* 
+            overflow 속성
+            영역보다 내용물이 많을 때 (이미지, 텍스트 등 잘림 현상)
+            1. 영역을 벗어난 컨텐츠에 적용되는 속성이다.
+            2. 영역을 벗어난 컨텐츠를 숨기거나 스크롤 처리한다.
+        */
+        .wrap2 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            display: inline-block;
+        }
+        .wrap2 > .box1 {
+            overflow: hidden;
+        }
+        .wrap2 > .box2 {
+            overflow-x: scroll;  /*  가로 방향의 스크롤이 생긴다 */
+            overflow-y: scroll;   /* 세로 방향의 스크롤이 생긴다 */
+        }
+        .wrap2 > .box3 {
+            overflow: scroll;  /* 가로/세로 방향의 스크롤이 생긴다. */
+        }
+    </style>
+    <div class="wrap2">
+        <div class="box1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="box2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+        <div class="box3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+    </div>
+
+    <hr>
+
+    <style>
+        /*
+            블록을 좌우로 배치하는 방법 - 1 (one true layout)
+            1. 부모 요소에 overflow: hidden 처리한다.
+            2. 자식 요소를 float: left; (또는 float: right;) 처리한다.
+        */
+
+        .wrap3 {
+            overflow: hidden;
+        }
+
+        .wrap3 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            float: left;
+        }
+
+    </style>
+    <div class="wrap3">
+        <div>BOX1</div>
+        <div>BOX2</div>
+    </div>
+
+    <style>
+        /*
+            블록을 좌우로 배치하는 방법 - 2
+            1. 부모 요소를 display: flex; 처리한다.
+            2. 그럼 끝.
+        */
+        div {
+            box-sizing: border-box;
+        }
+        .wrap4 {
+            display: flex; /* display가 중요!!! */
+            flex-wrap: wrap;  /* nowrap : 디폴트, 부모 영역으로 자식들을 모두 모으는 방식,
+                                   wrap : 자식들의 크기를 유지하기 때문에 부모 영역을 벗어날 수 있는 방식 */
+            flex-direction: row; /* row, row-reserve, column(위 아래 배치), column-reverse */
+            justify-content: space-between; /* center, space-around(테두리와 블록들 간격을 여백 주고 싶을 때(패딩처럼), space-between(블록들 사이에만 여백 주고 싶을 때 ) */
+            width: 600px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+        .wrap4 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+    </style>
+    <div class = "wrap4">  <!-- 부모에 flex를 줘야 자식이 수평을 맞춤! -->
+        <div>BOX1</div>
+        <div>BOX2</div>
+        <div>BOX3</div>
+        <div>BOX4</div>
+        <div>BOX5</div>
+    </div>
+
+    
+</body>
+</html>
