@@ -20,6 +20,8 @@
             <img src="../../images/flower3.jpg" width="300">
         </div>
 
+<br><br>
+
     <style>
         .wrap2 > input[type=checkbox]{
             display: none;
@@ -28,7 +30,8 @@
             padding-left: 20px;
             background-image: url('../../images/check1.png');
             background-size: 16px 16px;
-            background-repeat: no-repeat; /* 배경반복 x */
+            background-repeat: no-repeat; /* 배경 반복 x */
+            background-position: 0 3px;   /* 이미지 살짝 아래로 내리기 */
         }
         .wrap2 > input[type=checkbox]:checked + label {
             background-image: url('../../images/check2.png');
@@ -40,21 +43,27 @@
         <input type="checkbox" id="service">
         <label for="service">서비스 이용약관에 동의합니다</label>
     </div>
-
+    
+    <br><br>
+    
     <style>
         /* 블록 -> 인라인 */
         .wrap3 > div {
             width: 100px;
             height: 100px;
             border: 1px solid gray;
-            display: inline; /* 인라인 요소로 바꾸기 */
+            display: inline;
+            /* 인라인 요소로 바꾸기 */
         }
     </style>
+    
     <div class="wrap3">
         <div class="box1">BOX1</div>
         <div class="box2">BOX2</div>
     </div>
-
+    
+    <br><br>
+    
     <style>
         /* 인라인 -> 블록 */
         .wrap4 > a {
@@ -64,8 +73,8 @@
             text-align: center;
             line-height: 100px;
             border: 1px solid gray;
-            display: block;  /* 블록 요소로 바꾸기 */
-            
+            display: block; /* 블록 요소로 바꾸기 */
+    
         }
     </style>
     <div class="wrap4">
@@ -73,25 +82,23 @@
         <a href="javascript:void(0)">링크2</a>
     </div>
     
+    <br><br>
+    
     <style>
         /* 인라인 -> 블록, 블록 요소들을 같은 줄에 배치 */
         .wrap5 > a {
-            /* a 링크에 주소달아주고 display */
             width: 100px;
             height: 100px;
             text-align: center;
             line-height: 100px;
             border: 1px solid gray;
-            display: inline-block;  /* 인라인 블록 요소로 바꾸기 */
-            
+            display: inline-block; /* 인라인 블록 요소로 바꾸기 */
         }
     </style>
-    <div class="wrap4">
-        <a href="javascript:void(0)">링크1</a>
-        <a href="javascript:void(0)">링크2</a>
+    <div class="wrap5">
+        <a href="javascript:void(0)">링크3</a>
+        <a href="javascript:void(0)">링크4</a>
     </div>
-
-    </style>
     
 </body>
 </html>

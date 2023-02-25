@@ -1,125 +1,128 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
+<!-- ************** 스타일 구성 -->
     <style>
         .title {
             font-weight: 900;
             font-size: 24px;
             text-align: center;
         }
+
         .month {
             font-size: 64px;
-            color: darkblue;
+            color: palevioletred;
         }
+
         .wrap1 > table {
+            margin: 0 auto;      /* 테이블을 wrap 가운데에 배치시킴 */
+            border-collapse: collapse;  /* 테이블끼리 테두리를 합쳐줌 */
+        }
+
+        .wrap1 > table td {   /* 테이블의 자손 중 td(각 열) -> wrap의 선택 후손 */
             width: 80px;
             height: 80px;
-            border: 1px solid black;
-            vertical-align: top;
-            padding: 10px;
+            border: 1px solid gray;
+            vertical-align: bottom;  /* 부모와 정렬 기준 -> 각 칸마다 텍스트의 위치 */
+            padding: 10px;  /* 글담고있는content와 box 사이값 */
         }
-        .wrap1 > table > caption {
-            font-size: 28px;
-            font-weight: 600;
-            padding: 1%;
+
+        .wrap1 > table > tbody td:hover { /* 해당 날짜칸에 마우스 갖다댈 때 배경은 하얀색으로 */
+            background-color: beige;
         }
-        .wrap1 > table > thead td {
-            height: 40px;
-            border: 1px solid black;
+
+        .wrap1 > table > thead td {  /* SUN~SAT */
+            height : 20px;
             text-align: center;
-            vertical-align: middle; 
         }
-        .wrap1 > table > tbody td {
-            height: 100px;
-            border: 1px solid black;
-            text-align: left;
-            vertical-align: top;
-        }
-        .wrap1 > table td:nth-of-type(1) {
+
+        .sunday {
             color: red;
         }
-        .wrap1 > table td:nth-of-type(7) {
+
+        .saturday {
             color: blue;
         }
-        
+
+        .next {
+            color: silver;
+        }
     </style>
+
+    <!-- ************** 표 구성 -->
     <div class="wrap1">
+        <div class="title">2023 <span class="month">1</span></div> 
+                     <!-- title에 있는 중앙정렬을 블록으로 묶을 수 있는 div 안에 span -->
         <table>
-            <caption>2023 1 January</caption>
-        
             <thead>
                 <tr>
-                    <td>SUN</td>
+                    <td class="sunday">SUN</td>
                     <td>MON</td>
                     <td>TUE</td>
                     <td>WED</td>
                     <td>THU</td>
                     <td>FRI</td>
-                    <td>SAT</td>
+                    <td class="saturday">SAT</td>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
+                    <td class="sunday">1</td>
                     <td>2</td>
                     <td>3</td>
                     <td>4</td>
                     <td>5</td>
                     <td>6</td>
-                    <td>7</td>
+                    <td class="saturday">7</td>
                 </tr>
                 <tr>
-                    <td>8</td>
+                    <td class="sunday">8</td>
                     <td>9</td>
                     <td>10</td>
                     <td>11</td>
                     <td>12</td>
                     <td>13</td>
-                    <td>14</td>
+                    <td class="saturday">14</td>
                 </tr>
                 <tr>
-                    <td>15</td>
+                    <td class="sunday">15</td>
                     <td>16</td>
                     <td>17</td>
                     <td>18</td>
                     <td>19</td>
                     <td>20</td>
-                    <td>21</td>
+                    <td class="saturday">21</td>
                 </tr>
                 <tr>
-                    <td>22</td>
+                    <td class="sunday">22</td>
                     <td>23</td>
                     <td>24</td>
                     <td>25</td>
                     <td>26</td>
                     <td>27</td>
-                    <td>28</td>
+                    <td class="saturday">28</td>
                 </tr>
-                    <td>29</td>
+                <tr>
+                    <td class="sunday">29</td>
                     <td>30</td>
                     <td>31</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
+                    <td class="next">1</td>
+                    <td class="next">2</td>
+                    <td class="next">3</td>
+                    <td class="next">4</td>
+                </tr>
             </tbody>
-
-
         </table>
-
     </div>
-    <tr>
-        <tbody>
-
-        </tbody>
-    </tr>
+    </body>
     
-</body>
-</html>
+    </html>

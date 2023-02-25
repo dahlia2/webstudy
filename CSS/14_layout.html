@@ -25,12 +25,15 @@
             float: right;
         }
     </style>
+    
     <div class="wrap1">
         <div class="box1">BOX1</div>
         <div class="box2">BOX2</div>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam metus lorem, lobortis at sapien vitae, dignissim finibus enim. Maecenas aliquam nulla id lectus mollis elementum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc sagittis sem ligula, ut congue leo gravida in. Donec augue ex, tempor eu nisi sit amet, tincidunt blandit nulla. Fusce erat magna, eleifend id tincidunt in, pellentesque ac orci. Nullam a est nisl. Etiam odio augue, posuere eu lectus quis, feugiat porttitor ligula. Nam mollis dolor eget eleifend convallis. Cras aliquet, ante eget venenatis congue, neque justo lacinia dui, non blandit augue dui ac leo. Duis quis dapibus risus. Donec nec orci ut libero cursus tempus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
     </div>
 
+    <br><br>
+    
     <style>
         /* 
             overflow 속성
@@ -48,8 +51,8 @@
             overflow: hidden;
         }
         .wrap2 > .box2 {
-            overflow-x: scroll;  /*  가로 방향의 스크롤이 생긴다 */
-            overflow-y: scroll;   /* 세로 방향의 스크롤이 생긴다 */
+            overflow-x: scroll;  /* 가로 방향의 스크롤이 생긴다 */
+            overflow-y: scroll;  /* 세로 방향의 스크롤이 생긴다 */
         }
         .wrap2 > .box3 {
             overflow: scroll;  /* 가로/세로 방향의 스크롤이 생긴다. */
@@ -61,7 +64,9 @@
         <div class="box3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
     </div>
 
+    <br>
     <hr>
+    <br>
 
     <style>
         /*
@@ -80,12 +85,16 @@
             border: 1px solid gray;
             float: left;
         }
-
     </style>
+
     <div class="wrap3">
         <div>BOX1</div>
         <div>BOX2</div>
     </div>
+
+    <br>
+    <hr>
+    <br>
 
     <style>
         /*
@@ -102,16 +111,19 @@
                                    wrap : 자식들의 크기를 유지하기 때문에 부모 영역을 벗어날 수 있는 방식 */
             flex-direction: row; /* row, row-reserve, column(위 아래 배치), column-reverse */
             justify-content: space-between; /* center, space-around(테두리와 블록들 간격을 여백 주고 싶을 때(패딩처럼), space-between(블록들 사이에만 여백 주고 싶을 때 ) */
+           
             width: 600px;
             height: 100px;
             background-color: antiquewhite;
         }
+        
         .wrap4 > div {
             width: 100px;
             height: 100px;
             border: 1px solid gray;
         }
     </style>
+    
     <div class = "wrap4">  <!-- 부모에 flex를 줘야 자식이 수평을 맞춤! -->
         <div>BOX1</div>
         <div>BOX2</div>

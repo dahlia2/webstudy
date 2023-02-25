@@ -25,7 +25,8 @@
             background-size: 50px 38px; /* 너비 높이 순으로 크기 작성 */
         }
     </style>
-    <div class="box1"></div>
+    <div class="box1">박스 1</div>
+    <br>
 
     <style>
         /* 2. 박스 > 이미지 */
@@ -47,17 +48,18 @@
             width: 100px;
             height: 38px;
             background-image: url('../../images/attach1.png');
-            background-size: cover;  /* 이미지가 박스의 너비/높이 중 큰 값에 맞춤. 일반적으로 쓰임 */
+            background-size: cover;  /* 이미지가 박스의 너비·높이 중 큰 값에 맞춤. 일반적으로 쓰임 */
         }
         
         .box4 {
             width: 100px;
             height: 38px;
             background-image: url('../../images/attach1.png');
-            background-size: contain; /* 이미지가 박스의 너비/높이 중 작은 값에 맞춤 */
+            background-size: contain; /* 이미지가 박스의 너비·높이 중 작은 값에 맞춤 */
         }
     </style>
     <div class="box3"></div>
+    <br>
     <div class="box4"></div>
 
     <hr>
@@ -73,13 +75,15 @@
     </style>
     <div class="box5"></div>
 
+   <br>
+
     <style>
         .box6 {
             width: 1440px;
             height: 960px;
             background-image: url('../../images/nature5.jpg');
-            background-size: 100% 100%; /* 박스 크기 기준 */
-            background-blend-mode: multiply;
+            background-size: 100% 100%;       /* 박스 크기 기준 */
+            background-blend-mode: multiply;  /* 바탕을 어둡게 해줌 */
             background-color: gray;
             border: 5px solid gray;
             margin: 0 auto;  /* 좌우 margin을 auto로 지정하면 해당 박스가 부모(body)의 가운데에 배치된다. */
@@ -88,7 +92,7 @@
             color: rgb(255, 255, 255); /* #FFF, #FFFFFF */
             text-align: center;          /* 가로 가운데 정렬 */
             line-height: 960px;         /* [박스 높이 고정 O] 박스 높이와 텍스트 라인 행의 높이를 같은 값으로 맞추면 세로 가운데 정렬효과가 나타남. (텍스트가 1줄일 때만) */
-                                        /* [박스 높이 고정값 X] 싱히 패딩값을 같게 하는 방법도 있다. */
+                                        /* [박스 높이 고정값 X] 상하 패딩값을 같게 하는 방법도 있다. */
         }
     </style>
     <div class="box6">이 눈을 언제 치우지...</div>
