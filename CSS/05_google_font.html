@@ -18,24 +18,25 @@
     
     <style>
         h1 {
-            font-family: 'Noto Sans KR', sans-serif; 
+            font-family: 'Noto Sans KR', sans-serif;
         }
     </style>
+    
+
     
     <!-- 2. @import를 이용한 구글 폰트 사용하기
              1) <style> 태그에 @import url()을 복붙
              2) Css
-    ->
+    -->
             <!-- css은 덮어쓰기 개념 -->
-    <style>
-        h1{
+            <!-- 이와 같은 걸 CDN라고 함 -->
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-                </style>
-            
-        }
-        /* 전부 스타일 안에서 처리하는 @import -> css 언어 */
-    </style>
+                h1 {
+                    font-family: 'Noto Sans KR', sans-serif;
+                }
+            </style>
+            <!-- 전부 스타일 안에서 처리하는 @import -> css 언어 -->
 
 </head>
 <body>
