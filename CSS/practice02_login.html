@@ -57,9 +57,9 @@
         }
         .input_wrap > input {
             width: 270px;
-            padding: 3px;
+            padding: 3px;  /* 전체(div)을 border-box로 초기화 했으니 패딩값을 주면 박스 사이즈도 덩달아 커짐 */
             border: 0;     /* 평소에 보이는 테두리를 없앤다. */
-            outline: 0;    /* 포커스를 가질 때 테두리를 없앤다. */
+            outline: 0;   /* 포커스를 가질 때 테두리를 없앤다. */
             background-color: white;
         }
         .right_wrap > button {
