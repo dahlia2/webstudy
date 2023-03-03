@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    
+<div id = "box1"></div>
+<script>
+var n = 1;
+while(n <= 5) {
+    document.getElementById('box1').innerHTML += (n + '&nbsp;&nbsp');
+  // 태그가 아니더래도 요소를 집어넣으려면 innerHTML를 사용해야 한다.
+    n++;
+}
+
+// for문 (지역변수 let을 사용)
+for(let n = 1; n <= 5; n++) {
+    document.getElementById('box1').innerHTML += (n + '&nbsp;&nbsp');
+}
+</script>
+
+<div id="box2"></div>
+<script>
+
+    var str = '<select name="month"><option value="">월</option>';
+    for(let m = 1; m <= 12; m++) {
+        str += '<option value="' + m + '">' + m + '월</option>';
+    }
+    str += '</select>';
+    document.getElementById('box2').innerHTML;
+
+</script>  
+
+<div id="box3"></div>
+<script>
+    var str = '';
+    for(let n = 1; n <= 10; n++) {
+        str += '<img src="animal' + n + '.jpg" width="100px">';
+    }  
+    document.getElementById(box3).innerHTML = str;
+</script>
+
+</body>
+</html>
