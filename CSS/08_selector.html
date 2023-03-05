@@ -68,7 +68,7 @@
         <dt>
             <strong>이름</strong>
         </dt>
-        <dd>육개장사발면</dd>
+        <dd>육개장사발면</dd>       
         <dt>
             <strong>조리법</strong>
         </dt>
@@ -111,7 +111,7 @@
                 2) :last-of-type      마지막 요소
                 3) nth-of-type        n번째 요소
         */
-        .lunch > h3 + ol > li:first-of-type {
+        .lunch li:first-of-type {
             color: coral;
         }
     </style>
@@ -152,8 +152,8 @@
     <style>
         /*
             10. 마우스 반응 선택자
-                1) :active 마우스를 누르고 있는 동안
-                2) :hover  마우스를 가져다 대는 동안
+                1) :hover  마우스를 가져다 대는 동안
+                2) :active 마우스를 누르고 있는 동안
         */
         /* css은 덮어쓰기 특징이 있다는 걸 잊지 않기! */
         .link {
@@ -182,19 +182,18 @@
         }
         .register_form > div input[name=gender]:checked + label {
             font-weight: 900;
-        }
+        }     /* div > input 으로 해도 실행됨 */
     </style>
     <form class="register_form">
         <div>
             <label for="name">이름</label>
-            <input type="text" id="name"
+            <input type="text" id="name">
         </div>
         <div>
             <input type="radio" name="gender" value="male" id="male">
             <label for="male">남자</label>
             <input type="radio" name="gender" value="female" id="female">
             <label for="feale">여자</label>
-
         </div>
     </form>
 

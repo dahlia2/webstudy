@@ -15,21 +15,24 @@
         <br>
         <!-- 입력 상자 크기는 5, 입력 가능한 최대 글자수는 4글자 -->
         <input type="text" size="5" maxlength="4">
-        <br>
+        <br><br>
+        placeholder 속성
         <!-- placeholder 속성 : 입력 메세지 -->
         <input type="text" placeholder="검색어를 입력하세요">
-        <br>
+        <br><br>
+        <!-- readonly 속성 : 입력된 값을 수정할 수 없게 만듬 -->
+        readonly 속성
+        <input type="text" value= "영희야 사랑해" readonly="readonly">
+        <br><br>
+        <!-- disable 속성 : 입력 상자를 사용할 수 없도록 만듬 -->
+        disable 속성
+        <input type="text" disabled="disabled">
+        <br><br>
         <!-- required 속성 : 필수 입력-->
         <input type="text" required>
         <br>
         <!-- value 속성 : 입력한 값이 저장되는 속성 -->
         <input type="text" value="날씨">
-        <br>
-        <!-- readonly 속성 : 입력된 값을 수정할 수 없게 만듬 -->
-        <input type="text" value= "영희야 사랑해" readonly="readonly">
-        <br>
-        <!-- disable 속성 : 입력 상자를 사용할 수 없도록 만듬 -->
-        <input type="text" disabled="disabled">
     </p>
 
     <!-- 2. 기타 <input> 태그 -->
@@ -131,6 +134,7 @@
         <!-- option은 꼭 열고 닫을 필요가 없으니 나홀로태그로 바꿀 수 있다.
               ㄴ 모든 태그가 나홀로 태그가 될 수 있는 건 아니다. 대표적으로 <textarea> 태그 -->
     </p>
+    <br> <br> <br>
 
     <!-- 8. 라벨 붙이기 : <label> 태그 -->
         <p>
@@ -181,11 +185,19 @@
             </label>
             <br>
             <label for ="age">
-                    나이 <input type="number" id="age" min="0" max="100">
+                나이 <input type="number" id="age" min="0" max="100">
             </label>
             <br>
+            type="subit"
+            <button type="submit">텍스트</button>
             <input type="submit" value="전송">
+            <br>
+            type="reset"
             <input type="reset" value="입력초기화">
+            <br>
+            type="button"
+            <input type="button" value="아무기능없음">
+            onclick 속성
             <input type="button" value="일반버튼" onclick="alert('호호호')">
         </form>
     </p>
