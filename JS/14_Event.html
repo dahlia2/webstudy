@@ -175,11 +175,11 @@
 
         // 고전 이벤트 등록 (이벤트 리스너는 익명 함수를 사용)
         link.onclick = function(event){  // 이벤트 객체 : event
-            // alert('이벤트 타입 : ' + event.type);
-            // alert('이벤트 대상 : ' + event.target);
-            // alert('이벤트 대상 : ' + this);
-            // alert(event.target.textContent);
-            // alert(this.textContent);
+            alert('이벤트 타입 : ' + event.type);
+            alert('이벤트 대상 : ' + event.target);
+            alert('이벤트 대상 : ' + this);
+            alert(event.target.textContent);
+            alert(this.textContent);
             event.preventDefault(); // 기본 동작을 막겠다. (방지하겠다.)  // a링크의 기본 동작은 링크 이동 -> 이 동작을 막음
         }
 

@@ -39,10 +39,10 @@
         console.log(str.toLowerCase());     // 소문자로 변환
 
         // 7. 좌우 공백 제거
-        var str = '     Java    Script      ';
+        var str = '    Java    Script    ';
         console.log(str.trimStart(), str.trimLeft());
         console.log(str.trimEnd(), str.trimRight());
-        console.log(str.trim());    // 앞뒤모두 제거
+        console.log(str.trim());
 
         // 8. 하나만 치환 (찾아 바꾸기)
         var str = 'JavaJavaJavaJavaJavaJava';
@@ -56,6 +56,7 @@
         // 10. 배열 요소 -> 하나의 문자열 연결
         var str2 = arr.join(',');
         console.log(str2);
+
     </script>
 
 
@@ -64,82 +65,79 @@
         // String 객체가 공유할 수 있도록 prototype에 replaceAll 속성을 등록한다.
         // replaceAll 속성의 값으로 함수를 등록하면 replaceAll 속성은 메소드가 된다.
 
-    /* 
-        // [예시 - 1 ]
+     /*
+        // [예시 1: 기본]
         String.prototype.replaceAll = function(){  // replaceAll + function() 함수가 합쳐진 것
             return '하하하';
         }
         var str = 'Hello World';
-        console.log(str.replaceAll());  // str의 string 값 Hello World가 replaceAll 메서드를 통해 하하하로 바뀌었음
+        console.log(str.replaceAll());  
 
-        // [예시 - 2 ] 매개변수
+        // [예시 2: 매개변수]
         String.prototype.replaceAll = function(data1, data2){ 
             return '하하하' + data1 + data2;
          }
-
         var str = 'Hello World';
-        console.log(str.replaceAll('정숙, 미희')); // 하하하정숙미희  // 정숙은 매개변수 data
+        console.log(str.replaceAll('정숙, 미희')); 
         
-        // + 화살표 함수로 한다면
+        // [예시 3: 화살표 함수]
         String.prototype.replaceAll = (data1, data2) => {
             return '하하하' + data1 + data2;
         }
-    
+
+        // [예시 4: this]
         String.prototype.replaceAll = function(){  
-            return this; // 현재 객체가 가지고 있는 값(str 의 값) // Hello World 출력
+            return this;  // 현재 객체(str)가 가지고 있는 값(str 의 값)  // Hello World
         }
         var str = 'Hello World';
         console.log(str.replaceAll())
 
+        // [예시 4-2: this]
         String.prototype.replaceAll = function(){  
-            return this; // 현재 객체가 가지고 있는 값(JavaJavaJava) 출력
+            return this;  // JavaJavaJava 출력
         }
         console.log('JavaJavaJava'.replaceAll());
-     */ 
+     */
 
      
      /* 
-        var str = 'JavaJavaJavaJavaJavaJava';
+        var str = 'JavaJavaJava';
         
         while(str.indexOf('Java') != -1) {  // Java 글씨가 없지 않다면 (있다면)
-         str =  str.replace('Java', '자바'); // 바꿔준 것을 변수에 덮어쓰기
+            str =  str.replace('Java', '자바'); // 바꿔준 것을 변수에 str에 덮어쓰기
         }
-        console.log(str);
+        console.log(str);  // 자바자바자바
     */
 
-        // [ prototype 적용 ] 위에 코드를 메서드로 만들기
+        // 위에 코드를 메서드로
         String.prototype.replaceAll = function(before, after) {
-            // this : 'JavaJavaJavaJava'
-            // before : 'Java'
-            // after : '자바'
-        
-            var str3 = this;
-
-            while(str3.indexOf(before) != 1){
-                str3 = str3.replace(before, after);
+        // this   : 'JavaJavaJava'
+        // before : 'Java'
+        // after  : '자바'
+            var str = this;
+            while(str.indexOf(before) != -1){
+                str = str.replace(before, after);
             }
-
-            return str3;
+            return str;
         }
 
-        var str3 = 'JavaJavaJavaJava';
-        console.log(str3.replaceAll('Java', '자바'));
+        var str = 'JavaJavaJavaJavaJava';
+        console.log(str.replaceAll('Java', '자바'));
+
 
         // 팁. split와 join으로 replaceAll 처리하기
-    /*  예시) 2023-03-07 값을 2023/03/07로 바꾸기 (-을 /로 바꾸기)
+    /*  
+        예시) 2023-03-07 값을 2023/03/07로 바꾸기 (-을 /로 바꾸기)
         var str = '2023-03-07';
         var arr = str.split('-');   // ['2023', '03', '07']
         str = arr.join('/');        // '2023/03/07'
         console.log(str);
     */
-
-        String.prototype.replaceAl = function(before, after){
-            return this.split(before).join(after);
-        }
-        var str4 = '2023-03-07';
-        console.log(str4.replaceAl('-', '/'));
-        
-
+        String.prototype.replaceAll = function(before, after){
+                return this.split(before).join(after);
+            }
+        var str = '2023-03-07';
+        console.log(str.replaceAll('-', '/'));
 
     </script>
     
