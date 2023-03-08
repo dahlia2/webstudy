@@ -105,6 +105,8 @@
 
     </script>
 
+    <br><br>
+
     <!-- 4. 체크 박스 선택하기 -->
    
     <style>
@@ -149,23 +151,20 @@
 
         // 개별 동의를 클릭하면 -> 모든 개별 동의의 체크 유무를 확인해서
         // 모두 체크되었으면 전체 동의를 체크하고, 아니면 전체 동의를 해제한다.
-
-        for(let i = 0; i < chkOneList.length; i++) {
+        for(let i = 0; i < chkOneList.length; i++){
             chkOneList[i].onclick = function(){   // onclick의 이벤트 등록을 3번 입력해주는 것
-                if(chkOneList[i].checked == true) {
-                    chkAll.checked = true;
-                } else {
-                    chkAll.checked = false;
+                let chkCount = 0;
+                for(let j = 0; j < chkOneList.length; j++) {
+                    chkCount += chkOneList[j].checked // checked가 됐다면 true 이는 숫자로 1
+                }
+                chkAll.checked = (chkOneList.length == chkCount); // 모두 체크된 것과 = 개별체크 개수가 같다면 true라면 -> 모든 동의체크도 true
                 }
             }
-        }
 
     </script>
+
+    <br><br>
     
-
-
-
-
     <!-- 연습 -->
     <div>
         <form id="frm_ex">
