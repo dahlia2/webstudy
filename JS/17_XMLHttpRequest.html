@@ -188,8 +188,9 @@
 
 
     <!-- 연습1. sfc_web_map.xml 읽어서 화면에 표시하기 -->
-    <div>
+    <div> <h3>연습 1</h3>
         <input type="button" id="btn_get_weather" value="날씨가져오기">
+        <br>
         <table border="1">
             <thead>
                 <tr>
@@ -211,14 +212,14 @@
                 if(xhr.readyState == 4 && xhr.status == 200) {
 
                     var data = xhr.responseXML;
-                    var webmap = data.getElementsByTagName('local');
+                    var localList = data.getElementsByTagName('local');  // element's' -> 배열
                     var str = '';
                     
-                    for(let i = 0; i < webmap.length; i ++) {
+                    for(let i = 0; i < localList.length; i ++) {
                         str += '<tr>';
-                        str += '<td>' + webmap[i].textContent + '</td>';
-                        str += '<td>' + webmap[i].getAttribute('desc') + '</td>';
-                        str += '<td>' + webmap[i].getAttribute('ta') + '</td>';
+                        str += '<td>' + localList[i].textContent + '</td>';
+                        str += '<td>' + localList[i].getAttribute('desc') + '</td>';
+                        str += '<td>' + localList[i].getAttribute('ta') + '</td>';
                         str += '</tr>';
                     }
                 document.getElementById('weather_body').innerHTML = str;
@@ -226,12 +227,13 @@
             };
         });
     });
-
     </script>
+    <br><br>
 
     <!-- 연습2. book.json 읽어서 화면에 표시하기 -->
-    <div>
+    <div> <h3>연습 2</h3>
         <input type="button" id="btn_get_book" value="책정보가져오기">
+        <br>
         <table border="1">
             <thead>
                 <tr>
@@ -262,7 +264,7 @@
                     for(let i = 0; i < data.books.length; i++){
                         str += '<tr>';
                         str += '<td>' + data.books[i].title + '</td>'; 
-                        str += '<td>' + data.books[i].author + '</td>';   // 혹은 data['books']
+                        str += '<td>' + data.books[i].author + '</td>';
                         str += '<td>' + data.books[i].price + '</td>';
                         str += '</tr>';
                     }

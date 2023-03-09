@@ -46,7 +46,7 @@
                 // 객체의 속성을 호출할 때는 항상 객체.속성 또는 객체['속성']의 형식을 갖춰야 한다.
                 // this : 현재 객체를 의미한다. 즉 obj를 의미한다.
                 console.log('이름이 뭐에요? ' + obj.name + ', 나이가 뭐에요? ' + obj.age);
-                console.log('이름이 뭐에요? ' + this.name + ', 나이가 뭐에요? ' + this.age);
+                console.log('이름이 뭐에요? ' + this.name + ', 나이가 뭐에요? ' + this['age']);
             }
         };
 
