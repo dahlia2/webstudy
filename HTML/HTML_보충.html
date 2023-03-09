@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>보충</title>
 </head>
 <body>
     
@@ -16,7 +16,7 @@
                 <ul type="circle">
                     <li>
                         축구
-                        <ul type="square">
+                        <ul type="square"> <!-- 타입 덮어쓰이기 -->
                             <li>공격수</li>
                             <li>수비수</li>
                             <li>골키퍼</li>
@@ -65,14 +65,14 @@
     <div>
         <ul type="disc">
             <li>
-                <span>사원목록</span>
+                <span>사원목록</span> <!-- 인라인 요소니까 type="disc" 적용됨 -->
                 <div>  <!-- <ul>과 같은 의미 -->
-                    <div><a href="05_image.html">무한스크롤</a></div>  <!--  <li><a>과 같은 의미 -->
-                    <div><a href="06_anchor.html">페이징</a></div>
+                    <div><a href="05_image.html">무한스크롤</a></div>  <!--  <li><a>과 같은 의미 --> 
+                    <div><a href="06_anchor.html">페이징</a></div>   <!-- 블록 요소니까 type="disc" 적용 안 됨 -->
                     <div><a href="07_table.html">검색</a></div>
                 </div>
             </li>
-            <li><a href="01_overview.html">계층게시판</a></li>
+            <li><a href="01_overview.html">계층게시판</a></li>  <!--ul 자식으로 li부터 올 수 있음 (a를 넣더래도 li 사이에 끼워넣기)-->
             <li><a href="02_basic.html">블로그</a></li>
             <li><a href="03_list.html">업로드게시판</a></li>
             <li><a href="04_text_effect.html">실시간채팅</a></li>
@@ -140,7 +140,7 @@
 
     <h3>문제 5</h3>
     <div>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data"> <!-- enctype은 post 메서드 방식에서만 쓰임 -->
             <div>
                 <label for="id">
                     아이디
@@ -166,7 +166,7 @@
                     <input type="text" placeholder="이메일" id="email">
                 </label>
                 <span>@</span>
-                <input type="text" placeholder="직접 입력" list="site">
+                <input type="text" placeholder="직접 입력" list="site">  <!-- input list <-> datalist id 값을 같게 해서 연결시켜줌 -->
                 <datalist id="site">
                     <option value="gmail.com"></option>
                     <option value="naver.com"></option>
@@ -177,7 +177,7 @@
                 <fieldset>
                     <legend>성별</legend>
                     <label for="m">
-                        <input type="radio" id="m" name="gender" checked>남자
+                        <input type="radio" id="m" name="gender" checked>남자  <!-- checked로 남자가 기본 선택 되어있게 함 -->
                     </label>
                     <label for="f">
                         <input type="radio" id="f" name="gender">여자
@@ -188,7 +188,7 @@
                 <fieldset>
                     <legend>관심</legend>
                     <div>
-                        <label for="it">
+                        <label for="it">  <!-- IT를 선택했으면 form으로 서밋하기 위해 label로 감싸서 for 값을 주는 것임 -->
                             <input type="checkbox" id="it">IT
                         </label>
                         <label for="business">
@@ -214,7 +214,7 @@
                 </fieldset>
             </div>
             <div>
-                <label for="city">
+                <label for="city">  <!-- option 선택한 것을 form으로 서밋하기 위해 label에 for값을 입력한 것임 -->
                     거주지
                     <select>
                         <option>::선택하세요::</option>
@@ -229,7 +229,7 @@
             </div>
             <div>
                 <div><label for="introduce">자기 소개</label></div>
-                <textarea rows="5" cols="40" placeholder="200자 이내 간단히 작성"></textarea>
+                <textarea rows="5" cols="40" placeholder="200자 이내 간단히 작성"></textarea>  <!-- textarea에 입력한 값 또한 form에 전송하기 위해 id가 필요함 -->
             </div>
             <br>
             <div>
@@ -249,6 +249,11 @@
                 <input type="reset" value="다시입력">
             </div>
         </form>
+    </div>
+
+    
+    <div>
+        <input type="submit" value="제출안해">
     </div>
 
     <!--

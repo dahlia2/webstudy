@@ -261,8 +261,8 @@
 
                     for(let i = 0; i < data.books.length; i++){
                         str += '<tr>';
-                        str += '<td>' + data.books[i].title + '</td>';
-                        str += '<td>' + data.books[i].author + '</td>';
+                        str += '<td>' + data.books[i].title + '</td>'; 
+                        str += '<td>' + data.books[i].author + '</td>';   // 혹은 data['books']
                         str += '<td>' + data.books[i].price + '</td>';
                         str += '</tr>';
                     }
