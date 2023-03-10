@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../resources/js/lib/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <script>
+    
+        // 1. 태그로 인식하기  (배열)
+        var div = $('div'); // $으로 감싸서 저장했으니 var div은 제이쿼리 객체가 된다.
+        console.log(div);
+
+        // 2. 아이디로 인식하기 (객체)
+        var box = $('#box');
+        console.log(box);
+
+        // 3. 클래스로 인식하기 (배열)
+        var wrap = $('.wrap');
+        console.log(wrap);
+
+    </script>
+    
+    <div id="box" class="=wrap"></div>
+
+
+    <script>
+        
+        $(function(){
+
+            // 4. 자식, 후손 호출  ★중요함 연습 많이 하기★
+            /* 
+                메소드 체이닝(method chaining)
+                $().children().children() 처럼 메소드를 연속해서 호출하는 방식
+            */
+            console.log('자식, 후손 호출');
+            console.log($('#ott > li'));                   // 자식 중 li 태그
+            console.log($('#ott').find('li'));             // 자식 중 li 태그
+            console.log($('#ott a'));                      // 후손 중 a 태그 (공백)
+            console.log($('#ott').find('a'));              // 후손 중 a 태그
+            console.log($('#ott').children());             // 자식(li 외 모든 자식)
+            console.log($('#ott').children().children());  // 자식의 자식(a 외 모든 자식) 호출
+
+
+            // 5. 형제
+            console.log('형제 호출');
+            console.log($('#netflix ~ li'));            // 모든 형제 중 li 태그
+            console.log($('#netflix').siblings('li'));  // 모든 형제 중 li 태그
+            console.log($('#netflix').siblings());      // 모든 형제
+            console.log($('#netflix + li'));            // 인접 형제 li 태그
+            console.log($('#netflix').next());          // 인접 형제
+            console.log($('#wave').nextAll());            // 다음 모든 형제
+            console.log($('#wave').prev());             // 이전 형제
+            console.log($('#wave').prevAll());          // 이전 모든 형제
+
+            // 6. 부모 (jQuery만의 기능)
+            console.log('부모 호출');
+            console.log($('#netflix').parents());           // 모든부모
+            console.log($('#netflix').parent());            // 부모
+            console.log($('#netflix').parent().parent());   // 부모의 부모
+            console.log($('#netflix').closest('div'));      // 가장 가까운 부모
+
+        });
+
+    </script>
+
+    <div>
+        <div class="inner_wrap">
+            <ul id="ott">
+                <li id="netflix"><a href="javascript:void(0)">넷플릭스</a></li>
+                <li id="disneyplus"><a href="javascript:void(0)">디즈니플러스</a></li>
+                <li id="wave"><a href="javascript:void(0)">웨이브</a></li>
+                <li id="coupangplay"><a href="javascript:void(0)">쿠팡플레이</a></li>
+                <li id="watcha"><a href="javascript:void(0)">왓챠</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        $(function(){
+
+            // type으로 지정하기
+            console.log('type 지정');
+            console.log($(' :input[type=text]'));  // input type= text
+            console.log($(' :text'));              // input type= text
+            console.log($(' :password'));          // input type= password
+            console.log($(' :radio'));             // input type= radio
+            console.log($('#frm :text'));          // input type= text
+            console.log($('#frm :password'));      // input type= password
+            console.log($('#frm :radio'));         // input type= radio
+
+            // 상태로 지정하기(:focus, :checked, :selected)
+            console.log('상태 지정');
+            console.log($('#frm :focus'));
+            console.log($('#frm :checked'));
+            console.log($('#frm :radio:checked'));
+            console.log($('#frm :selected'));
+
+            // 상태 확인 메소드
+            // is(' :focus')    : 포커스를 가졌다면 true 반환
+            // is(' :checked')  : 체크되었다면 true 반환
+            // is(' :selected') : 선택되었다면 true 반환
+            $('#frm :text').focus();
+            
+            if($('#frm :text').is(':focus')){
+                console.log('text가 포커스를 가졌다.');
+            } else {
+                console.log('text가 포커스를 가지지 않았다.');
+            }
+
+        });
+
+    </script>
+
+    <div class="container">
+        <form id="frm">
+            <div><input type="text"></div>
+            <div><input type="password"></div>
+            <div>
+                <input type="radio" name="gender" value="male">남
+                <input type="radio" name="gender" value="female">여
+                <input type="radio" name="gender" value="none" checked>선택안함
+            </div>
+            <div>
+                <select>
+                    <option value="">선택</option>
+                    <option value="02" selected>02</option>
+                    <option value="031">031</option>
+                    <option value="032">032</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
