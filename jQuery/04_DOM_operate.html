@@ -25,7 +25,7 @@
 
         // 2. html() == innerHTML
         console.log($('#box2').html());
-        $('#box2').html('<h1>BOX2</h1>');
+        $('#box2').html('<h1>박스2</h1>');
 
     </script>
 
@@ -35,24 +35,23 @@
         // 3. css() == style
         $('#box3').css('color', '#c8c8c8')
                   .css('font-size', '32px');
-        $('#box3').css({
+        $('#box3').css({    // 객체로 묶어서 적용시킬 수 있다
             'background-color': '#181818',
             'text-align': 'center'
         });
         
     </script>
 
-    <div>
-        <img id="img">
-    </div>
-    <script>
+<div>
+    <img id="img">
+</div>
+<script>
 
-        // 4. attribute == attr()
-        console.log($('#img').attr('id'));
-        $('#img').attr('alt', '이미지');
-        $('#img').attr('src', '../../images/fruit1.jpg');
-        $('#img').attr('width', '200px');
-
+    // 4. attribute == attr()
+    console.log($('#img').attr('id'));
+    $('#img').attr('alt', '이미지');
+    $('#img').attr('src', '../../images/fruit1.jpg');
+    $('#img').attr('width', '200px');
     </script>
 
     <div>
@@ -63,7 +62,7 @@
         // 5. property == prop()
         console.log($('#link').prop('id'));
         $('#link').prop('href', 'https://www.naver.com');
-        $('#link').prop('target', '_blank');
+        $('#link').prop('target', '_blank');   // 어떤 창으로 이동할지 지정해주는 속성: 새 창을 만들어서 이동
 
     </script>
 

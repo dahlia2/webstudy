@@ -22,12 +22,14 @@
 <br>
 
     <style>
-        /*
-            img가 hidden되면 img가 화면에서 아예 없어지니까 마우스를 해당 사진에 갖다댈 수 없으므로 잘못된 구성이다.
+           /*
+            img가 hidden되면 img가 화면에서 사라지기 때문에
+            더 이상 img를 hover 할 수 없으므로 잘못된 구성이다.
             .box2 > img:hover {
-                   visibility: hidden;
+                visibility: hidden;
             }
-            따라서, img가 hidden 되더라도 항상 화면에서 선택할 수 있는 div 영역을 만들고 그 내부에 img를 배치해서 작업한다.
+            따라서, img가 hidden 되더라도 항상 화면에서 선택할 수 있는
+            div 영역을 만들고 그 내부에 img를 배치해서 작업한다.
         */
         .wrap2 > div {
             width: 200px;
@@ -35,7 +37,7 @@
         .wrap2 > div > img {  
             width: 100%;
         }
-        .wrap2 > div:hover > img {  /* 마우스를 갖다대면 이미지를 숨기겠다 */
+        .wrap2 div:hover > img {  /* 마우스를 갖다대면 이미지를 숨기겠다 */
             visibility: hidden;
         }
     </style>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        /*
+            블록을 좌우로 배치하는 방법 - 1 (one true layout)
+            1. 부모 요소에 overflow: hidden 처리한다.
+            2. 자식 요소를 float: left; (또는 float: right;) 처리한다.
+        */
+
+        .wrap3 {
+            overflow: hidden;
+        }
+
+        .wrap3 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            float: left;
+        }
+    </style>
+
+    <div class="wrap3">
+        <div>BOX1</div>
+        <div>BOX2</div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <style>
+        /*
+            블록을 좌우로 배치하는 방법 - 2
+            1. 부모 요소를 display: flex; 처리한다.
+            2. 그럼 끝.
+        */
+        div {
+            box-sizing: border-box;
+        }
+        .wrap4 {
+            display: flex; /* display가 중요!!! */
+            flex-wrap: wrap;  /* nowrap : 디폴트, 부모 영역으로 자식들을 모두 모으는 방식,
+                                   wrap : 자식들의 크기를 유지하기 때문에 부모 영역을 벗어날 수 있는 방식 */
+            flex-direction: row; /* row, row-reserve, column(위 아래 배치), column-reverse */
+            justify-content:  space-between; /* center, space-around(테두리와 블록들 간격을 여백 주고 싶을 때(패딩처럼), space-between(블록들 사이에만 여백 주고 싶을 때 ) */
+           
+            width: 600px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+        
+        .wrap4 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            background-color: pink;
+        }
+    </style>
+    
+    <div class = "wrap4">  <!-- 부모에 flex를 줘야 자식이 수평을 맞춤! -->
+        <div>BOX1</div>
+        <div>BOX2</div>
+        <div>BOX3</div>
+        <div>BOX4</div>
+        <div>BOX5</div>
+    </div>
+
+</body>
+</html>

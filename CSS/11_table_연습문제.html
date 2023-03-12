@@ -9,6 +9,7 @@
 </head>
 
 <body>
+ 
 
 <!-- ************** 스타일 구성 -->
     <style>
@@ -28,11 +29,11 @@
             border-collapse: collapse;  /* 테이블끼리 테두리를 합쳐줌 */
         }
 
-        .wrap1 > table td {   /* 테이블의 자손 중 td(각 열) -> wrap의 선택 후손 */
+        .wrap1 td {   /* 테이블의 자손 중 td(각 열) -> wrap의 선택 후손 */
             width: 80px;
             height: 80px;
             border: 1px solid gray;
-            vertical-align: bottom;  /* 부모와 정렬 기준 -> 각 칸마다 텍스트의 위치 */
+            vertical-align: top;  /* 부모와 정렬 기준 -> 각 칸마다 텍스트의 위치 */
             padding: 10px;  /* 글담고있는content와 box 사이값 */
         }
 

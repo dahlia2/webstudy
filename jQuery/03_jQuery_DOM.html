@@ -37,29 +37,28 @@
                 메소드 체이닝(method chaining)
                 $().children().children() 처럼 메소드를 연속해서 호출하는 방식
             */
-            console.log('자식, 후손 호출');
+
             console.log($('#ott > li'));                   // 자식 중 li 태그
             console.log($('#ott').find('li'));             // 자식 중 li 태그
-            console.log($('#ott a'));                      // 후손 중 a 태그 (공백)
+            console.log($('#ott a'))                       // 후손 중 a 태그
             console.log($('#ott').find('a'));              // 후손 중 a 태그
-            console.log($('#ott').children());             // 자식(li 외 모든 자식)
-            console.log($('#ott').children().children());  // 자식의 자식(a 외 모든 자식) 호출
-
+            console.log($('#ott').children());             // 모든 자식
+            console.log($('#ott').children().children());  // 모든 자식의 모든 자식 
 
             // 5. 형제
             console.log('형제 호출');
-            console.log($('#netflix ~ li'));            // 모든 형제 중 li 태그
-            console.log($('#netflix').siblings('li'));  // 모든 형제 중 li 태그
-            console.log($('#netflix').siblings());      // 모든 형제
-            console.log($('#netflix + li'));            // 인접 형제 li 태그
-            console.log($('#netflix').next());          // 인접 형제
-            console.log($('#wave').nextAll());            // 다음 모든 형제
-            console.log($('#wave').prev());             // 이전 형제
-            console.log($('#wave').prevAll());          // 이전 모든 형제
+            console.log($('#netflix ~ li'));             // 모든 형제 중 li 태그
+            console.log($('#netflix').siblings('li'));   // 모든 형제 중 li 태그
+            console.log($('#netflix').siblings());       // 모든 형제
+            console.log($('#netflix + li'));             // 인접 형제 li 태그
+            console.log($('#netflix').next());           // 인접 형제
+            console.log($('#netflix').nextAll());        // 다음 모든 형제
+            console.log($('#watcha').prev());            // 이전 형제
+            console.log($('#watcha').prevAll());         // 이전 모든 형제
 
             // 6. 부모 (jQuery만의 기능)
             console.log('부모 호출');
-            console.log($('#netflix').parents());           // 모든부모
+            console.log($('#netflix').parents());           // 모든 부모
             console.log($('#netflix').parent());            // 부모
             console.log($('#netflix').parent().parent());   // 부모의 부모
             console.log($('#netflix').closest('div'));      // 가장 가까운 부모

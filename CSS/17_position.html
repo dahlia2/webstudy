@@ -22,7 +22,6 @@
             top: 50px; /* 위에서 50px 떨어뜨리기 (아래로 50px 이동) */
             left: 50px; /* 왼쪽에서 50px 떨어뜨리기 (오른쪽으로 50px 이동) */
         }
-
     </style>
     <div class="wrap1">
         <div>static BOX</div>
@@ -33,13 +32,13 @@
     <br><br>
 
     <style>
+        /*
+            position: relative;
+            1. HTML 기본 배치를 따른다.
+            2. 상대적 위치 조정(top, bottom, left, right)이 가능하다.
+            3. 원래 자신의 위치를 기준으로 top, bottom, left, right가 동작한다.
+        */
         .wrap2 > div {
-            /* 
-                position: static;
-                1. HTML 기본 배치를 따른다.
-                2. 상대적 위치 조정(옵셋: top, bottom, left, right)이 가능하다.
-                    기준점 : 원래 자신의 위치를 기준으로 top, bottom, left, right가 동작한다.
-            */
             width: 300px;
             height: 100px;
             border: 1px solid gray;
@@ -53,6 +52,8 @@
         <div>relative BOX</div>
     </div>
 
+<br><br><br><br><br><hr><br>
+    absolute 연습 1
     <style>
         /* 
             position: absolute;
@@ -68,7 +69,7 @@
             border: 1px solid crimson;
             position: relative;
         }
-        
+
         .wrap3 > div {
             width: 100px;
             height: 100px;
@@ -83,22 +84,24 @@
         <div>absolute BOX</div>
     </div>
 
+<br><hr><br>
+    absolute 연습 2
+
     <style>
         .wrap4 {
             margin-top: 50px;
-            width: 200px;
+            width: 300px;
             height: 50px;
             border: 1px solid gray;
             position: relative;
         }
 
         .wrap4 > .btn_box {   
-            width: 65px;
-            height: 30px;
-            border: 1px solid gray;
+            width: 80px;
+            height: 40px;
             position: absolute;
-            top: 8px;
-            right: 7px;
+            top: 5px;
+            right: 5px;
             display: flex;  /* 자식인 버튼의 < > 텍스트를 옆으로 정렬하기 위해 */
         }
 
@@ -108,16 +111,14 @@
             border: 1px solid gray;
         }
 
-        /*  내가 푼 것
-            .wrap4 > .btn_box :nth-child(2) {
-            border-left: white;
-        }
-        */
-        /* div의 인접 형제 */
-        .wrap4 > .btn_box > div + div {
-            border-left: 0;
+        .wrap4 > .btn_box > div + div {  /* div의 인접 형제 */
+                border-left: 0;
         }
 
+        /* 내가 푼 것
+        .wrap4 > .btn_box :nth-child(2) {
+        border-left: white;
+        } */
     </style>
 
     <div class="wrap4">
@@ -273,6 +274,8 @@
     <p>
         <span class="here" data-describe="풍선도움말">여기</span>를 선택하세요.
     </p>
+    <br>
+    <br>
     
 </body>
 </html>
