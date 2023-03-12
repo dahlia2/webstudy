@@ -9,27 +9,21 @@
 <body>
     <script>
 
-    /*
-        // window는 생략 가능
-        onload = ()=>{
-        }
-    
-        // 표준 이벤트
-        window.addEventListener('load', ()=>{
-            
-        });
-    */
-
-    /*
+        /*
         [ load 이벤트 타입으로 호출 ]
         -- DOM 처리는 윗부터 순차적으로 한다.
         -- 즉 <script>가 먼저 쓰이기 위해서(위에서 몰빵) load 이벤트타입 사용
-    */
+
+        // 표준 이벤트
+           window.addEventListener('load', ()=>{
+               
+           });
+        */
 
         // [ 고전 이벤트 리스너 ] : load 이벤트 사용시 고전 사용
-        // HTML 문서를 모두 읽을 때 발생하는 이벤트
-        window.onload = ()=>{   // window는 생략 가능
-
+           // HTML 문서를 모두 읽을 때 발생하는 이벤트
+           window.onload = ()=>{   // window는 생략 가능
+            
 
         // <input type="text" id="msg">에 입력한 메세지를 19_child.html 창으로 전송한다.
       
