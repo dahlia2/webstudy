@@ -99,10 +99,8 @@
             console.log(p, typeof p);    // title, string 
                                          // author, string
                                          // price, string
-         //  console.log(p + ': ' + book.p); // for-in문에서는 마침표를 이용한 속성 참조가 불가능.  // (book.'title', book.'author', book.'price')
-                                            // for-in문에서는 대괄호를 이용한 속성 참조만 가능.    // (book['title'], book['author'], book['price'])
-            console.log(p + ': ' + book['p']);
-
+         // console.log(p + ': ' + book.p);     // for-in문에서는 마침표를 이용한 속성 참조가 불가능.  // (book.'title', book.'author', book.'price')               
+            console.log(p + ': ' + book['p']);  // for-in문에서는 대괄호를 이용한 속성 참조만 가능.    // (book['title'], book['author'], book['price'])
         }
     </script>
 
