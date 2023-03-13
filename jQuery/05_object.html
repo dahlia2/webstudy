@@ -38,16 +38,17 @@
             // 객체의 프로퍼티 순회-2 (each 메소드)
             // $.each(객체, function(프로퍼티, 값){});
             // $.each(객체, (프로퍼티, 값)=>{}); 
-            // 추가++ $(객체).each(()=>{}); 객체를 밖으로 꺼낼 수도 있다
+            // [추가] $(객체).each(()=>{}); 객체를 밖으로 꺼낼 수도 있다
+            var dl = $('<dl>');
             $.each(obj, (p, value)=>{   // 익명 + 화살표 함수
                 dl.append('<dt>' + p + '</dt>');
                 dl.append('<dd>' + value + '</dd>');
             })
             $('#box').append(dl);
 
-        /* ( 변환하지 않았을 때 )
+        /* 
            $('<dl>').appendTo($('#box')); // jQuery 객체를 가져오려면 <dl>를 jQuery로 먼저 변환($)
-           $('#box').append($('<dl>'));   // 이미 객체가 변환을 해줬으므로 <dl>를 $할 필요 없음
+           $('#box').append('<dl>');   // 이미 객체가 변환을 해줬으므로 <dl>를 $할 필요 없음
            
            $('#box').append('<dt>' + obj.title + '</dt>');
            $('#box4').append($('<dt>').text(obj.title)); // <dt>의 텍스트값 가져오려면 dt도 html 객체니까 jQuery 데이터로 변환

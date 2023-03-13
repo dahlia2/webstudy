@@ -154,8 +154,9 @@
     <script>
         // input type=text
         $('#frm :text').css('background-color', 'silver');
-        $('#frm :text').prop('value', 'admin');
+        $('#frm :text').prop('value', 'admin'); // value="admin"
         $('#frm :text').val('master'); // 입력 값을 조작하는 val 메소드 (value 속성) // admin을 master로 변경
+        console($('#frm :text').val());
 
         // input type=password
         $('#frm :password').val('1234');
@@ -180,7 +181,7 @@
             color: red;
         }
     </style>
-    <div id="box4">
+    <div id="box4" class="invisible">
         Hello World
     </div>
     <script>
@@ -203,9 +204,6 @@
         }
         
     </script>
-
-    
-
 
 </body>
 </html>
