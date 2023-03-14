@@ -1,0 +1,92 @@
+<div>
+    <button id="btn5">book.xml 조회하기</button>
+</div>
+<div id="box5">
+    <table border="1">
+        <thead>
+            <tr>
+                <td>제목(title)</td>
+                <td>썸네일(image+link)</td>
+                <td>저자(author)</td>
+                <td>할인가(discount)</td>
+                <td>출판사(publisher)</td>
+                <td>출판일(pubdate)</td>
+                <td>ISBN(isbn)</td>
+                <td>개요(description)</td>
+            </tr>
+        </thead>
+        <tbody id="book_list_xml"></tbody>
+    </table>
+</div>
+<script>
+    $('#btn5').on('click', function(){
+        $.ajax({
+            type: 'GET',
+            url: 'book.xml',
+            async: true,
+            dataType: 'xml',
+            success: function(data){
+                $('#book_list_xml').empty();
+                $.each($(data).find('item'), (i, item)=>{
+                    var tr = $('<tr>');
+                    tr.append($('<td>').html($(item).find('title').text()));
+                    tr.append($('<td>').html($('<a>').attr('target', '_blank').attr('href', $(item).find('link').text()).append($('<img>').attr('src', $(item).find('image').text()).attr('width', '80px').attr('height', '120px'))));
+                    tr.append($('<td>').html($(item).find('author').text()));
+                    tr.append($('<td>').html($('<span>').text($(item).find('discount').text() + '원').css('color', '#ff0000')));
+                    tr.append($('<td>').html($(item).find('publisher').text()));
+                    var pubdate = $(item).find('pubdate').text();
+                    tr.append($('<td>').html(pubdate.substring(0,4) + '-' + pubdate.substring(4,6) + '-' + pubdate.substring(6)));
+                    tr.append($('<td>').html($(item).find('isbn').text()));
+                    tr.append($('<td>').html($(item).find('description').text()));
+                    $('#book_list_xml').append(tr);
+                });
+            }
+        });
+    });
+</script>
+
+<div>
+    <button id="btn6">book.json 조회하기</button>
+</div>
+<div id="box6">
+    <table border="1">
+        <thead>
+            <tr>
+                <td>제목(title)</td>
+                <td>썸네일(image+link)</td>
+                <td>저자(author)</td>
+                <td>할인가(discount)</td>
+                <td>출판사(publisher)</td>
+                <td>출판일(pubdate)</td>
+                <td>ISBN(isbn)</td>
+                <td>개요(description)</td>
+            </tr>
+        </thead>
+        <tbody id="book_list_json"></tbody>
+    </table>
+</div>
+<script>
+    $('#btn6').on('click', function(){
+        $.ajax({
+            type: 'GET',
+            url: 'book.json',
+            async: true,
+            dataType: 'json',
+            success: function(data){
+                $('#book_list_json').empty();
+                $.each(data.items, (i, item)=>{  // data은 jSON객체 총집합체, data의 속성 items, items배열의 객체 하나하나 item
+                    var tr = $('<tr>');
+                    tr.append($('<td>').html(item.title));
+                    tr.append($('<td>').html($('<a>').attr('target', '_blank').attr('href', item.link).append($('<img>').attr('src', item.image).attr('width', '80px').attr('height', '120px'))));
+                    tr.append($('<td>').html(item.author));
+                    tr.append($('<td>').html($('<span>').text(item.discount + '원').css('color', '#ff0000')));
+                    tr.append($('<td>').html(item.publisher));
+                    tr.append($('<td>').html(item.pubdate.substring(0,4) + '-' + item.pubdate.substring(4,6) + '-' + item.pubdate.substring(6)));
+                    tr.append($('<td>').html(item.isbn));
+                    tr.append($('<td>').html(item.description));
+                    $('#book_list_json').append(tr);
+                });
+            }
+        });
+    });
+</script>

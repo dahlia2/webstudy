@@ -10,7 +10,7 @@
 <body>
     
     <script>
-        /* 
+        /*          
             jQuery 이벤트
 
             1. 이전 이벤트 처리 메소드(현재 사용하지 않기를 권장)
@@ -43,7 +43,6 @@
         <a href="https://www.kakao.com" target="_blank" class="link">카카오</a>
         <a href="https://www.google.com" target="_blank" class="link">구글</a>
     </div>
-
     <script>
         // 이벤트리스너는 화살표 함수를 사용하지 않는다. (화살표 함수에는 this에 바인딩(할당) 된 객체가 없기 때문)
         $('.link').on('click', function(event){
@@ -53,28 +52,27 @@
                 return;                 // 이벤트 리스너를 종료시킨다.  // 만약 return이 없다면? if문을 빠져나와서 밑 alert문도 실행됨
                                         // event.preventDefault() + return 세트로 쓰기 
             }
-            alert($(event.target).text() + '로 이동합니다.'); // 네이버로 이동합니다 // 카카오로 이동합니다
+            alert($(this).text() + '로 이동합니다.'); // 네이버로 이동합니다 // 카카오로 이동합니다
         });
     </script>
 
-    <div id="box">
-        <script>
-            // <div id="box"></div>에 동적 요소를 추가한다. (동적 요소)
-            $('#box').append('<button id="btn">버튼</button>');
+    <div id="box"></div>
+    <script>
+        // <div id="box"></div>에 동적 요소를 추가한다.
+        $('#box').append('<button id="btn">버튼</button>');
 
-            // 동적 요소에 이벤트 등록하기  
-            $('#btn').on('click', function(){
-                $(this).after('<p>하하하</p>');   // 이벤트 리스너에서 동적 요소 생성
-                                                  // 버튼 밑에 p태그 (형제관계일 때) :before, after 속성 사용
-            });
+        // 동적 요소에 이벤트 등록하기  
+        $('#btn').on('click', function(){
+            $(this).after('<p>하하하</p>');   // 이벤트 리스너에서 동적 요소 생성
+                                                // 버튼 밑에 p태그 (형제관계일 때) :before, after 속성 사용
+        });
 
-            // 이벤트로 생성한 동적 요소에 이벤트 등록하기
-            $('#box').on('click', 'p', function(){  // #box > p
-                $(this).css('background-color', 'yellow');
-            });
+        // 이벤트로 생성한 동적 요소에 이벤트 등록하기
+        $('#box').on('click', 'p', function(){  // #box > p
+            $(this).css('background-color', 'yellow');
+        });
+    </script>
 
-        </script>
-    </div>
     
 </body>
 </html>
