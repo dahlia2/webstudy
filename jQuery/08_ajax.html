@@ -37,7 +37,7 @@
     </script>
 
 
-    <br><br>
+
     <div id="box2">
         <button id="btn2">XML 요청1</button>
     </div>
@@ -49,13 +49,13 @@
                 async: true,
                 dataType: 'xml',
                 success: function(data){    // var data = xhr.responeXML; 
-                    var productList = $(data).find('product');  // data의(xml 파일) 자식(3개의 product)
+                    var productList = $(data).find('product');  // data의(xml 파일) 후손 (3개의 product)
                     $.each(productList, (i, product)=>{  // element 대신 product라고 사용가능
                         var ul = $('<ul>');
-                        ul.append( $('<li>').text($(product).find('model').text()) );
+                        ul.append( $('<li>').text($(product).find('model').text()) );  // <product>의 자식태그 <model>의 텍스트값
                         ul.append( $('<li>').text($(product).find('maker').text()) );
                         ul.append( $('<li>').text($(product).find('price').text()) );
-                        $('#box2').append(ul);
+                        $('#box2').append(ul); // 이어서 붙인 ul 태그들을 <div>의 마지막 자식으로 넣어줌
                     });
                 },
                 error: function(jqXHR){
