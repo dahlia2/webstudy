@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn" onclick="fnAlert()">전송</button>
+    <script>
+        // 고전 이벤트
+        document.getElementById('btn').onclick = function(){
+            alert('전송합니다.');
+        }
+
+        // 표준 이벤트 (제이쿼리는 표준이벤트 사용)
+        document.getElementById('btn').addEventListener('click', function(){
+            alert('전송합니다.');
+        })
+
+        // 인라인 이벤트 (쌤 기준 가장 많이 쓴다고 함)
+        function fnAlert(){
+            alert('전송합니다.');
+        }
+    </script>
+
+    <button id="to_site">이동</button>
+    <script>
+        document.getElementById('#to_site').onclick = function(){
+            location.href='https://www.google.com';  // 또는 open('https://www.google.com');
+            
+        }
+    </script>
+    
+</body>
+</html>
