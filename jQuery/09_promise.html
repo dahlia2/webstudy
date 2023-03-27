@@ -22,10 +22,10 @@
             // 응답
             type: 'text',
             success: function(data){ 
-                a = data;   // a = 'Hello World'를 기대하지만, 응답이 올 때까지 기다리지 않고 다음 코드가 진행된다.
+                a = data;   // a = 'Hello World'를 기대하지만 , 응답이 올 때까지 기다리지 않고 다음 코드가 진행된다.
             }
         });
-        console.log(a);  
+        console.log(a);  // undefined
     </script>
     
     <script>
@@ -50,6 +50,7 @@
            reject();
         });
 
+     
         // Promise 객체의 then() 메소드 호출하기
         promise.then(function(){
             console.log(('resolve() 호출'));     // then메소드가 실행한 함수의 값은 resolve에 전달

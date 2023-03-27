@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        label {
+            display: block;  /* label을 블록 요소로 변경 */
+        }
+    </style>
+
+    <div>  <!-- 공통값을 주기 위해 클래스는 같게, 개별 값 적용을 위해 아이디는 다르게 -->
+        <label for="chkAll"> 
+            <input type="checkbox" id="chkAll">
+            모두 동의합니다.
+        </label>
+        <label for="service">
+            <input type="checkbox" id="service" class="chkOneList">
+            이용약관에 동의합니다.
+        </label>
+        <label for="privacy">
+            <input type="checkbox" id="privacy" class="chkOneList">
+            개인정보 동의합니다.
+        </label>
+        <label for="promotion">
+            <input type="checkbox" id="promotion" class="chkOneList">
+            프로모션 동의합니다.
+        </label>
+    </div>
+
+    <script>
+        // 전체 동의 체크박스 (아이디 -> 객체)
+        var chkAll = document.getElementById(chkAll);
+        
+        // 개별 동의 체크박스 (클래스 -> 배열)
+        var chkOneList = document.getElementsByClassName("chkOneList");
+
+        // 전체 동의를 체크하면 개별 동의가 모두 체크
+        chkAll.addEventListener('click', (event)=>{    // 표준이벤트 + 화살표함수
+            for(let i = 0; i < chkOneList.length; i++){
+                chkOneList[i].checked = chkAll.checked; 
+            }
+        });
+
+ 
+    </script>
+
+
+</body>
+</html>

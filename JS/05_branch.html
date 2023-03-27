@@ -19,13 +19,15 @@
     </div>
     <script>
 
-        var kor = Number(document.getElementById('kor').textContent);
+        // 객체 얻어오는 과정
+        var kor = Number(document.getElementById('kor').textContent); // 81 텍스트를 가져와서 문자로 변환
         var eng = Number(document.getElementById('eng').textContent);
         var math = Number(document.getElementById('math').textContent);
 
         var average = (kor + eng + math) / 3;
 
         var grade;
+
         /*
         if(average >= 90){
             grade = 'A';
@@ -49,6 +51,7 @@
         default: grade = 'F';
         }
 
+        // 객체 값 적용 과정 (얻어온 후에 적용할 변수를 대입)
         document.getElementById('average').textContent = average;
         document.getElementById('grade').textContent = grade;
 

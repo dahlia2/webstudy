@@ -133,8 +133,8 @@
         str = arr.join('/');        // '2023/03/07'
         console.log(str);
     */
-        String.prototype.replaceAll = function(before, after){
-                return this.split(before).join(after);
+        String.prototype.replaceAll = function(before, after){   // before='-', after='/'
+                return this.split(before).join(after);           // this = str 
             }
         var str = '2023-03-07';
         console.log(str.replaceAll('-', '/'));

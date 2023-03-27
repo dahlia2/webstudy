@@ -24,6 +24,7 @@
                 // 응답 (서버가 보내는 데이터 타입을 명시)
                 dataType: 'text',           // 응답 데이터의 타입(text, xml, json 등)
                 success: function(data){  // data가 매개변수로 들어가서 응답 데이터가 자동 전달된다. (responseText, responseXML 등)
+                    console.log(data, typeof data);
                  // $('#btn1').after($('<div>').text(data));  // $('#btn1').after('<div>' + data + '</div>');
                     $('#box1').append($('<div>').text(data));
                 },
@@ -48,7 +49,8 @@
                 url: 'product1.xml',
                 async: true,
                 dataType: 'xml',
-                success: function(data){    // var data = xhr.responeXML; 
+                success: function(data){    // var data = xhr.responseXML; 
+                    console.log(data, typeof data);
                     var productList = $(data).find('product');  // data의(xml 파일) 후손 (3개의 product)
                     $.each(productList, (i, product)=>{  // element 대신 product라고 사용가능
                         var ul = $('<ul>');
@@ -79,6 +81,7 @@
                 async: true,
                 dataType: 'xml',
                 success: function(data){
+                            console.log(data, typeof data);
                     $.each($(data).find('product'), (i, product)=>{
                         var ul = $('<ul>');
                         ul.append( $('<li>').text($(product).attr('model')));
@@ -108,10 +111,11 @@
                 url: 'product.json',
                 async: true,
                 dataType: 'json',
-                success: function(data){   // var data = JSON.parse(xhr.responseText);
-                    // console.log(data);  // json 배열객체 -> jSONparse할 필요가 없다(문자열 때 사용)
+                success: function(data){   // var data = JSON.parse(xhr.responseText);  
+                   // console.log(data, typeof data);   
                     $.each(data, (i, product)=>{
-                        console.log(data);
+                   //   console.log(product); // {maker: '삼성', price: 100, model: '세탁기'} .. 
+                   //   console.log(i); // 0, 1, 2
                         var ul = $('<ul>');
                         ul.append($('<li>')).text(product.maker);
                         ul.append($('<li>')).text(product.price);
@@ -219,8 +223,8 @@
                         // 출판사
                         tr.append($('<td>').html(element.publisher));
                         // 출판일자 YYYYMMDD를 YYYY-MM-DD 형식으로 변환
-                        tr.append($('<td>').html(ite))
-
+                        tr.append($('<td>').html(element.pubdate.substring(0,4) + '-' + element.pubdate.substring(4,6) + '-' + element.pubdate.substring(6)));
+                        tr.append($('<td>').html(element.isbn));   
                         $('#book_list_json').append(tr);
                     });
                 },
