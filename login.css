@@ -1,4 +1,90 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: '맑은 고딕', sans-serif;
+}
+
+header {
+    margin: 40px auto 42px;
+}
+
+body {
+    background-color: #F5F6F7;
+    position: relative;
+}
+
+
 .fot {
     display: flex;
 }
+
+.wrap{
+    position: absolute;
+    top: 80px;
+    left: 200px;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+input:not([type=radio]) {
+    max-width: 460px;
+}
+
+#frm_login{
+    margin-left: 50px;
+}
+
+
+#id, #pw {
+    border-color: #007700;
+    width: 200%;
+    margin: 3px;
+    height: 50px;
+}
+#id:hover, #pw:hover {
+    border-color: #ff8800;
+}
+
+section button {   
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #007700;
+    cursor: pointer;
+    width: 463px;
+    height: 55px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+}
+.left p, .right p {
+    text-align: center;
+    margin: 5px;
+}
+
+.left {
+    margin-right: 10px;
+}
+.left a, .right a {
+    box-sizing: content-box;
+    font-size: 18px;
+    color: white;
+    background-color: #007777;
+    width: 250px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 auto;
+}
+
+
 
